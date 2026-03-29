@@ -1,4 +1,5 @@
 CREATE DATABASE product_db;
+
 USE product_db;
 
 CREATE TABLE products (
@@ -8,3 +9,11 @@ CREATE TABLE products (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     deleted_at TIMESTAMP NULL
 );
+INSERT INTO products (name, price) VALUES
+('Laptop', 50000),
+('Phone', 20000),
+('Headphones', 3000);
+SELECT * FROM products;
+UPDATE products
+SET deleted_at = NOW()
+WHERE id = 1;
